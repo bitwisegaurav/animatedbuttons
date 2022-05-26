@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Button</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+        }
+
+        .btn {
+            position: relative;
+            padding: 10px 30px;
+            border: 1px solid #41f321;
+            margin: 10px;
+            font-family: sans-serif;
+            display: inline-block;
+            text-decoration: none;
+            color: #41f321;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.5s;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            color: #111;
+        }
+
+        .btn span {
+            position: absolute;
+            display: block;
+            width: 0px;
+            height: 0px;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: #41f321;
+            transition: width 0.5s, height 0.5s;
+            z-index: -1;
+        }
+        
+        .btn:hover span {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#" class="btn"><span></span>Button</a>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(e){
+        $('.btn').on('mouseenter',function(e){
+            x = e.pageX - $(this).offset().left;
+            y = e.pageY - $(this).offset().top;
+            $(this).find('span').css({top:y, left:x})
+        })
+        $('.btn').on('mouseout',function(e){
+            x = e.pageX - $(this).offset().left;
+            y = e.pageY - $(this).offset().top;
+            $(this).find('span').css({top:y, left:x})
+        })
+    })
+</script>
+
+</html>
