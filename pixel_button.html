@@ -5,47 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixel Button</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: #111;
-        }
-        a{
-            position: relative;
-            width: 180px;
-            height: 60px;
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            text-align: center;
-            line-height: 60px;
-            letter-spacing: 2px;
-            margin: 20px;
-            transition: 0.5s;
-        }
-        a:hover{
-            background: #ec0b36 url(pixel.png);
-            transition-delay: 0.8s;
-            background-size: 180px;
-            animation: animate 0.8s steps(8) forwards;
-        }
-        @keyframes animate{
-            0%{
-                background-position-y: 0;
-            }
-            100%{
-                background-position-y: -480px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/pixel_button.css">
 </head>
 <body>
     <a href="#">Pixel Button</a>
